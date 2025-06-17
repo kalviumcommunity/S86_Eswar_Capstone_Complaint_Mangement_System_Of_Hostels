@@ -66,4 +66,9 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+// Test GET route (optional)
+router.get('/', (req, res) => {
+  res.send('Complaint API is working');
+});
+
 module.exports = router;
