@@ -1,0 +1,18 @@
+meta {
+  name: put
+  type: http
+  seq: 3
+}
+
+put {
+  url: http://localhost:5000/api/complaints/68512723f245bcaf9517c8eb
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "status": "Done",
+    "priority": "High"
+  }
+}

@@ -1,0 +1,21 @@
+meta {
+  name: get
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:5000/api/complaints/user/kanna/hostel
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "user": "kanna",
+    "roomNumber": "B101",
+    "category": "Plumbing",
+    "description": "Pipe leaking",
+    "type": "hostel"
+  }
+}
