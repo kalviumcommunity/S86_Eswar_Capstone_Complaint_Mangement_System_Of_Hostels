@@ -66,8 +66,5 @@ This capstone project — *"Online Complaint Management System for Hostel/Colleg
 | **Day 20** | **OAuth Integration** (Optional): Added Google Sign-In for improved authentication (optional but good for bonus points).                                                                |
 | **Day 21** | **Final QA & Demo Recording**: Conducted bug fixing, UI polish, tested user flows end-to-end, and recorded a video explaining the project and demo.                                     |
 
----
-
-Would you like to add a section after this for **"Proof of Concepts Completed"** (e.g., “Created Low-Fid Design ✅”, “Used POST API ✅”, etc.) to show alignment with grading points?
 
 
