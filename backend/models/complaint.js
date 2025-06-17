@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const complaintSchema = new mongoose.Schema({
-  user: { type: String, required: true }, // or ObjectId if using a User model
+  user: { type: String, required: true }, // Or ObjectId if using User model
   roomNumber: { type: String, required: true },
   category: { type: String, required: true },
   description: { type: String, required: true },
