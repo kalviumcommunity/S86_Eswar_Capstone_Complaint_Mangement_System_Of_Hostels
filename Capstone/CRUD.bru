@@ -1,0 +1,22 @@
+meta {
+  name: CRUD
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:5000/api/complaints
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "user": "john123",
+    "roomNumber": "B101",
+    "category": "Plumbing",
+    "description": "Pipe leaking",
+    "type": "hostel"
+  }
+  
+}
