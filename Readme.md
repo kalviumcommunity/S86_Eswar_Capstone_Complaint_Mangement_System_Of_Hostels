@@ -64,9 +64,10 @@ This capstone project — *"Online Complaint Management System for Hostel/Colleg
 | **Day 18** | **File Upload Feature** (Optional): Added file input support in complaint form and stored uploads using multer (or cloud service).                                                      |
 | **Day 19** | **Frontend Deployment**: Deployed the frontend to Netlify/Vercel and configured it to communicate with the deployed backend.                                                            |
 | **Day 20** | **OAuth Integration** (Optional): Added Google Sign-In for improved authentication (optional but good for bonus points).                                                                |
-| **Day 21** | **Final QA & Demo Recording**: Conducted bug fixing, UI polish, tested user flows end-to-end, and recorded a video explaining the project and demo.      
+| **Day 21** | **Final QA & Demo Recording**: Conducted bug fixing, UI polish, tested user flows end-to-end, and recorded a video explaining the project and demo.                                     |
 
-**Backend deployment link**:- https://s86-eswar-capstone-complaint-mangement-gfdz.onrender.com
+---
 
+**Backend Deployment Link:-** https://s86-eswar-capstone-complaint-mangement-gfdz.onrender.com
 
 
