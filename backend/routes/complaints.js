@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Complaint = require('../models/complaint');
 
-// POST: Create a new complaint
 router.post('/', async (req, res) => {
   try {
     const { user, roomNumber, category, description, type } = req.body;
@@ -12,7 +11,7 @@ router.post('/', async (req, res) => {
       roomNumber,
       category,
       description,
-      type // hostel or college
+      type
     });
 
     const saved = await newComplaint.save();
@@ -22,7 +21,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-// GET: All complaints by type (admin)
 router.get('/all/:type', async (req, res) => {
   try {
     const complaints = await Complaint.find({ type: req.params.type });
@@ -32,7 +30,6 @@ router.get('/all/:type', async (req, res) => {
   }
 });
 
-// GET: Complaints by user and type
 router.get('/user/:userId/:type', async (req, res) => {
   try {
     const complaints = await Complaint.find({
@@ -45,7 +42,6 @@ router.get('/user/:userId/:type', async (req, res) => {
   }
 });
 
-// PUT: Update status or priority (selective update)
 router.put('/:id', async (req, res) => {
   try {
     const updates = {};
@@ -70,7 +66,6 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// Test GET route (optional)
 router.get('/', (req, res) => {
   res.send('Complaint API is working');
 });
