@@ -45,14 +45,18 @@ router.get('/user/:userId/:type', async (req, res) => {
   }
 });
 
-// PUT: Update status or priority
+// PUT: Update status or priority (selective update)
 router.put('/:id', async (req, res) => {
   try {
+    const updates = {};
     const { status, priority } = req.body;
+
+    if (status) updates.status = status;
+    if (priority) updates.priority = priority;
 
     const updated = await Complaint.findByIdAndUpdate(
       req.params.id,
-      { status, priority },
+      updates,
       { new: true }
     );
 
