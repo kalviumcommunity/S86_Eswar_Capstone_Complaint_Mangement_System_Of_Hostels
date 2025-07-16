@@ -2,24 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Complaint = require('../models/components');
 
-router.post('/', async (req, res) => {
-  try {
-    const { user, roomNumber, category, description, type } = req.body;
 
-    const newComplaint = new Complaint({
-      user,
-      roomNumber,
-      category,
-      description,
-      type
-    });
-
-    const saved = await newComplaint.save();
-    res.status(201).json(saved);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to create complaint' });
-  }
-});
 
 router.get('/all/:type', async (req, res) => {
   try {
