@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Complaint = require('../models/complaint');
+const Complaint = require('../models/components');
 
-// POST: Create a new complaint
 router.post('/', async (req, res) => {
   try {
     const { user, roomNumber, category, description, type } = req.body;
@@ -12,7 +11,7 @@ router.post('/', async (req, res) => {
       roomNumber,
       category,
       description,
-      type // hostel or college
+      type
     });
 
     const saved = await newComplaint.save();
@@ -22,7 +21,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-// GET: All complaints by type (admin)
 router.get('/all/:type', async (req, res) => {
   try {
     const complaints = await Complaint.find({ type: req.params.type });
@@ -32,7 +30,6 @@ router.get('/all/:type', async (req, res) => {
   }
 });
 
-// GET: Complaints by user and type
 router.get('/user/:userId/:type', async (req, res) => {
   try {
     const complaints = await Complaint.find({
@@ -45,14 +42,17 @@ router.get('/user/:userId/:type', async (req, res) => {
   }
 });
 
-// PUT: Update status or priority
 router.put('/:id', async (req, res) => {
   try {
+    const updates = {};
     const { status, priority } = req.body;
+
+    if (status) updates.status = status;
+    if (priority) updates.priority = priority;
 
     const updated = await Complaint.findByIdAndUpdate(
       req.params.id,
-      { status, priority },
+      updates,
       { new: true }
     );
 
@@ -64,6 +64,10 @@ router.put('/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: 'Failed to update complaint' });
   }
+});
+
+router.get('/', (req, res) => {
+  res.send('Complaint API is working');
 });
 
 module.exports = router;
